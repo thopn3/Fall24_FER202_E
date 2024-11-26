@@ -31,4 +31,3 @@ function example2(){
 }
 
 example2();
-//
