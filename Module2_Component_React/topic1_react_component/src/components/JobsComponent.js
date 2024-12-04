@@ -8,7 +8,7 @@ class Job extends Component {
     render() {
         return (
             <div>
-                New Job {this.props.index} | <a href="#" onClick={this.props.delete}>x</a>
+                New Job {this.props.index}
             </div>
         )
     }
@@ -23,7 +23,10 @@ class ManagementJob extends Component {
 
     addNewJob = () => {
         // Update JobList
-        this.setState(prevState => ({ JobsList: [...prevState.JobsList, <Job index={prevState.JobsList.length + 1} />] }))
+        this.setState(prevState => ({ 
+            JobsList: [...prevState.JobsList, 
+            <Job index={prevState.JobsList.length + 1} />] 
+        }))
     }
 
     // 2
