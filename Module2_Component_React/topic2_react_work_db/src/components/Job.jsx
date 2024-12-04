@@ -1,5 +1,6 @@
 import "./Job.css";
 import { useEffect, useState } from "react";
+import {Link} from "react-router-dom";
 
 function Job() {
     // Khai báo state để quản lý dữ liệu của component
@@ -83,7 +84,9 @@ function Job() {
                                         }
                                     </td>
                                     <td>{j?.status == true ? <span style={{ color: "blue" }}>Completed</span> : <>In-Completed</>}</td>
-                                    <td>Detail</td>
+                                    <td>
+                                        <Link to={"/jobs/"+j?.id}>Details</Link>
+                                    </td>
                                     <td>Remove</td>
                                 </tr>
                             ))
