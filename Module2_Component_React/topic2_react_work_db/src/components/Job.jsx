@@ -41,6 +41,16 @@ function Job() {
 
     }, [search, selectedCatId]);
 
+    function handleRemove(id){
+        if(window.confirm("Do you want to delete JobId: "+id)){
+            // Gửi yêu cầu tới API tại: http://localhost:9999/jobs/:id để xóa job theo id
+            fetch("http://localhost:9999/jobs/"+id, {method: "DELETE"})
+                .then(() => {
+                    alert("Delete successfully!");
+                    window.location.reload();
+                })
+        }
+    }
 
     return (
         <div>
@@ -87,7 +97,9 @@ function Job() {
                                     <td>
                                         <Link to={"/jobs/"+j?.id}>Details</Link>
                                     </td>
-                                    <td>Remove</td>
+                                    <td>
+                                        <Link to={"/jobs"} onClick={() => handleRemove(j?.id)}>Remove</Link>
+                                    </td>
                                 </tr>
                             ))
                         }
