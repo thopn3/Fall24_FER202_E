@@ -1,6 +1,6 @@
 import "./Job.css";
 import { useEffect, useState } from "react";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 function Job() {
     // Khai báo state để quản lý dữ liệu của component
@@ -8,11 +8,18 @@ function Job() {
     const [categories, setCategories] = useState([]);
     const [search, setSearch] = useState("");
     const [selectedCatId, setSelectedCatId] = useState(0);
+    const navigate = useNavigate();
 
     // Sử dụng useEffect -> thay thế cho các hàm: componentDidMount()
     useEffect(() => {
+        const existAccount = localStorage.getItem("account")
+        const uId = JSON.parse(existAccount).id;
+        if(!existAccount){
+            navigate("/");
+        }
+
         // Gọi API: http://localhost:9999/jobs
-        fetch("http://localhost:9999/jobs")
+        fetch("http://localhost:9999/jobs?uId="+uId)
             .then(response => response.json())
             .then(result => {
                 if (search.length == 0) {
