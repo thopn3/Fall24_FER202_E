@@ -76,6 +76,10 @@ function Job() {
                 <option value="false">In-Completed</option>
             </select>
 
+            <div style={{textAlign:"right"}}>
+                <Link to={"/jobs/create"}>Add new Job</Link>
+            </div>
+
             <hr />
             {
                 jobs.length == 0 ? <div style={{ color: "red" }}>Job not found</div> :

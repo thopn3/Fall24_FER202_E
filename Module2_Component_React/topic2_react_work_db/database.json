@@ -1,12 +1,12 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "user": "user1",
       "pass": "abc@123"
     },
     {
-      "id": 2,
+      "id": "2",
       "user": "user2",
       "pass": "abc@123"
     }
@@ -170,15 +170,38 @@
           "status": false
         }
       ]
+    },
+    {
+      "id": "0de9",
+      "title": "New Job",
+      "cId": 1,
+      "uId": 1,
+      "status": false,
+      "issues": [
+        {
+          "iId": 2,
+          "title": "Nhiệm vụ 2",
+          "start": "12/6/2024, 2:01:33 PM",
+          "end": "2024-12-09T14:01",
+          "status": false
+        },
+        {
+          "iId": 1,
+          "title": "Nhiệm vụ 1",
+          "start": "12/6/2024, 2:01:14 PM",
+          "end": "2024-12-07T14:01",
+          "status": false
+        }
+      ]
     }
   ],
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Category 1"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Category 2"
     }
   ]
